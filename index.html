@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Small screen</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container flex">
+        <div class="wrapper flex" id="wrapper">
+            <div id="appopener" class="flex">
+                <img src="https://20k14k.github.io/cv-generator/karan.logo.jpg" alt="" style = "width:55px; border-radius:1rem">
+            </div>
+            <div class="mainbox flex" id="mainbox">
+                <div class="upperbox flex">
+                    <div class="logobox flex">
+                        <img src="https://20k14k.github.io/cv-generator/karan.logo.jpg" alt="">
+                        <div class="headingbox flex">
+                            This is an Image shown by Karan Kushwaha
+                        </div>
+                    </div>
+                    <div class="toolbox flex">
+                        <div class="minimize tools flex" id="minimize">—</div>
+                        <div class="maximize tools flex" id="maximize">▢</div>
+                        <div class="close tools flex" id="close">✕</div>
+                    </div>
+                </div>
+                <div class="screenbody flex" id="screenbody">
+                    <img src="https://pixewall.com/wp-content/uploads/2023/03/4k-Cityscape-Desktop-Wallpaper-2048x1152.png"
+                        alt="Landscape Image">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        // -----------close app----------------
+        let closebtn = document.getElementById("close")
+        closebtn.addEventListener("click", close)
+        function close() {
+            document.getElementById("mainbox").classList.add("closeapp")
+            document.getElementById("appopener").classList.add("showappopener")
+        }
+
+        // -------------open app--------------
+        let openbtn = document.getElementById("appopener")
+        openbtn.addEventListener("click", openapp)
+        function openapp() {
+            document.getElementById("appopener").classList.remove("showappopener")
+            document.getElementById("mainbox").classList.remove("closeapp")
+        }
+
+
+
+        // ----------maximize-------------
+        let max = document.getElementById("maximize")
+        max.addEventListener("click", maximize)
+        function maximize() {
+            document.getElementById("screenbody").style.height = "480px"
+        }
+
+        // ----------minimize-------------
+        let min = document.getElementById("minimize")
+        min.addEventListener("click", minimize)
+        function minimize() {
+            document.getElementById("screenbody").style.height = "0px"
+        }
+    </script>
+</body>
+
+</html>
